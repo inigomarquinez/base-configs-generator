@@ -1,0 +1,35 @@
+{
+  "name": "@inigomarquinez/base-configs-generator",
+  "version": "1.0.0",
+  "description": "Tool to generate a collection of opinionated base configs for code quality and linting tools",
+  "main": "index.js",
+  "bin": {
+    "bcg": "./index.ts"
+  },
+  "type": "module",
+  "engines": {
+    "npm": "^10",
+    "yarn": "Please use npm",
+    "pnpm": "Please use npm"
+  },
+  "scripts": {
+    "build": "rimraf dist && tsc",
+    "plop": "npm run build && plop --plopfile dist/plopfile.js",
+    "dev": "node --trace-warnings --experimental-strip-types ./src/plopfile.ts",
+    "start": "node --trace-warnings --experimental-strip-types ./index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^22.5.4",
+    "npm-check-updates": "^17.1.1",
+    "plop": "^4.0.1",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4"
+  },
+  "overrides": {
+    "node-plop": {
+      "inquirer": "9.3.5"
+    }
+  }
+}
